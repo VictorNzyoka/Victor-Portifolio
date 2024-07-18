@@ -251,7 +251,7 @@ span {
 
     21%,
     40% {
-        content: "AI/Machine learning";
+        content: "Data Scientist";
     }
 
     41%,
@@ -376,6 +376,10 @@ span {
     right: -8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
+.view-link {
+    font-size: 18px;
+    padding: 10px 15px;
+}
 
 ::-webkit-scrollbar {
     width: 15px;
@@ -446,11 +450,6 @@ span {
     margin: auto;
 }
 
-.resume {
-    padding: 2rem 0;
-    text-align: center;
-}
-
 .heading {
     margin-bottom: 2rem;
     font-size: 2.5rem;
@@ -481,15 +480,92 @@ embed {
     /* Adjust height as needed */
     border: none;
 }
+/* Card styles */
 
-@media (max-width: 768px) {
-    .pdf-container {
-        flex-direction: column;
-        align-items: center;
+.resume {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.resume-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.card {
+    flex: 0 0 calc(33.333% - 1.33rem);
+    max-width: calc(33.333% - 1.33rem);
+    min-height: 250px;
+    /* Increased minimum height */
+    background-color: var(--second-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    /* Added to allow vertical centering of content */
+    flex-direction: column;
+    /* Added to stack card content vertically */
+    justify-content: center;
+    /* Added to center content vertically */
+}
+
+.card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* Make card body fill the entire card */
+}
+
+.card-title {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    margin-top: auto;
+    /* Push button to bottom of card */
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+/* Additional styling for smaller screens */
+@media (max-width: 991px) {
+    .resume-row {
+        flex-wrap: wrap;
     }
 
-    .resume-img,
-    .cover-img {
+    .card {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 0 0 100%;
         max-width: 100%;
     }
 }
@@ -699,4 +775,15 @@ embed {
             margin-bottom: 3rem;
         }
     }
+          @media (max-width: 991px) {
+              .card {
+                  width: calc(50% - 1rem);
+              }
+          }
+    
+          @media (max-width: 576px) {
+              .card {
+                  width: 100%;
+              }
+          }
 }
